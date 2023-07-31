@@ -36,14 +36,47 @@ function calculateResult() {
         i++;
     }
 
-    if (r == "+"){
-        display.value = parseInt(d) + parseInt(s);
-    } else if (r == "-"){
-        display.value = parseInt(d) - parseInt(s);
-    } else if (r == "*"){
-        display.value = parseInt(d) * parseInt(s);
-    } else {
-        display.value = parseInt(d) / parseInt(s);
+    if ((d.includes(".") || d.includes(",")) && (s.includes(".") || s.includes(","))){
+        if (r == "+"){
+            display.value = parseFloat(d) + parseFloat(s);
+        } else if (r == "-"){
+            display.value = parseFloat(d) - parseFloat(s);
+        } else if (r == "*"){
+            display.value = parseFloat(d) * parseFloat(s);
+        } else {
+            display.value = parseFloat(d) / parseFloat(s);
+        }
+    } else if (d.includes(".") || d.includes(",")) {
+        if (r == "+"){
+            display.value = parseFloat(d) + parseInt(s);
+        } else if (r == "-"){
+            display.value = parseFloat(d) - parseInt(s);
+        } else if (r == "*"){
+            display.value = parseFloat(d) * parseInt(s);
+        } else {
+            display.value = parseFloat(d) / parseInt(s);
+        }
+    } else if (s.includes(".") || s.includes(",")) {
+        if (r == "+"){
+            display.value = parseInt(d) + parseFloat(s);
+        } else if (r == "-"){
+            display.value = parseInt(d) - parseFloat(s);
+        } else if (r == "*"){
+            display.value = parseInt(d) * parseFloat(s);
+        } else {
+            display.value = parseInt(d) / parseFloat(s);
+        }
+        }
+     else {
+        if (r == "+"){
+            display.value = parseInt(d) + parseInt(s);
+        } else if (r == "-"){
+            display.value = parseInt(d) - parseInt(s);
+        } else if (r == "*"){
+            display.value = parseInt(d) * parseInt(s);
+        } else {
+            display.value = parseInt(d) / parseInt(s);
+        }
     }
 }
 
